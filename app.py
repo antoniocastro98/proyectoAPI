@@ -9,7 +9,7 @@ app = Flask (__name__)
 
 @app.route('/')
 def inicio():
-    return render_template("inicio.html")
+    return render_template("/inicio.html")
 
 @app.route('/ligas', methods=["GET"])
 def ligas():
@@ -21,7 +21,7 @@ def ligas():
 @app.route('/jugadores')
 def jugadores():
     cabeceras={"accept": "application/json","X-AUTH-TOKEN":key,"Content-Type": "application/json"}
-    datos="{"name":"Cristiano Ronaldo"}"
+    datos="{\"name\":\"Cristiano Ronaldo\"}"
     r=requests.post(URL_BASE+"api/players",headers=cabeceras,data=datos)
 
     if r.status_code==200:
