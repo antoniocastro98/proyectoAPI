@@ -9,7 +9,7 @@ app = Flask (__name__)
 
 @app.route('/')
 def inicio():
-    return render_template("/inicio.html")
+    return render_template("inicio.html")
 
 @app.route('/ligas', methods=["GET"])
 def ligas():
