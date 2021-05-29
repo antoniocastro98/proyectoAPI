@@ -3,17 +3,29 @@
 <!--////////////////////////////////////Container-->
 {% block content %}
 
-<h3>Introduce el jugador que deseas buscar</h3>
+<h3>Introduce el jugador que quieres buscar</h3>
     <form action="/jugadores/" method="post">
       <label>Nombre del jugador:</label>
       <input type="text" name="jugador" required/>
       <input type="submit" value="Enviar"/>
     </form>
 
-{% if datos %}
+
+<div><img class="img-fluid mb-3 mb-lg-0" src="https://futdb.app/api/players/{{id1}}/image" alt="" /></div>
 
 
-    <div></div><img class="img-fluid mb-3 mb-lg-0" src="https://futdb.app/api/players/{{id}}/image" alt="" /></div>
+<table class="default">
+    <caption>Atributos</caption>
+    <tr>
+      <td>Ritmo={{ritmo}}                           </td>
+      <td>Disparo={{disparo}}                       </td>
+      <td>Pase={{pase}}                             </td>
+    </tr>
+    <tr>
+        <td>Regate={{regate}}                        </td>
+        <td>Defensa={{defensa}}                      </td>
+        <td>Fisico={{fisico}}                        </td>
+    </tr>
+  </table>
     
-{% endif %}
 {% endblock %}
