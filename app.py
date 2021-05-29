@@ -17,13 +17,7 @@ def ligas():
         r=requests.post(URL_BASE+"api/leagues",headers=cabeceras)	
         if r.status_code==200:
             ligas1=r.json()
-            lista=[]
-            for i in ligas1["items"]:
-                lista.append(i)
-        return render_template('ligas.html', ligas1=lista)
-
-
-
+        return render_template('ligas.html', ligas1=ligas1)
 
 
 @app.route('/jugadores/',methods=["GET","POST"])
