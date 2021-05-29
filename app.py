@@ -37,17 +37,14 @@ def jugadores():
             r=requests.post(URL_BASE+"api/players",headers=cabeceras,data=datos)	
             if r.status_code==200:
                 datosjugador=r.json()
-                lista=[]
                 ritmo=datosjugador.get("items")[0].get("pace")
                 pase=datosjugador.get("items")[0].get("passing")
                 disparo=datosjugador.get("items")[0].get("shooting")
                 fisico=datosjugador.get("items")[0].get("physicality") 
                 regate=datosjugador.get("items")[0].get("dribbling") 
-                defensa=datosjugador.get("items")[0].get("defending") 
-                for i in datosjugador["items"]:
-                    lista.append(i)
-                id1=datosjugador.get("items")[0].get("id")
-            return render_template("jugadores.html",datos=lista,id=id1,ritmo=ritmo,pase=pase,disparo=disparo,fisico=fisico,regate=regate,defensa=defensa)	
+                defensa=datosjugador.get("items")[0].get("defending")
+                id1=datosjugador.get("items")[0].get("id") 
+                return render_template("jugadores.html" ,id1=id1, ritmo=ritmo,pase=pase,disparo=disparo,fisico=fisico,regate=regate,defensa=defensa)	
 
 
 @app.route('/precios', methods=["GET"])
