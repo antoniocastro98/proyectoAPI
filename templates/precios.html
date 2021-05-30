@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Precios{% endblock %}
+<!--////////////////////////////////////Container-->
+{% block content %}
+
+<h3>Introduce el jugador que quieres buscar</h3>
+    <form action="/precios/" method="post">
+      <label>Nombre del jugador:</label>
+      <input type="text" name="jugadorp" required/>
+      <input type="submit" value="Enviar"/>
+    </form>
+
+    <h3>Nombre: {{nombre}}   </h3>
+
+<div><img class="img-fluid mb-3 mb-lg-0" src="https://futdb.app/api/players/{{id1}}/image" alt="" /></div>
+
+
+<table class="default">
+    <caption>Precios</caption>
+    <tr>
+        <td>PS4={{ps4}}                           </td>
+    </tr>
+    <tr>
+        <td>XBOX={{xbox}}                           </td>
+    </tr>
+    <tr>
+        <td>PC={{pc}}                           </td>
+    </tr>
+  </table>
+    
+
+
+
+{% endblock %}
