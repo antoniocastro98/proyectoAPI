@@ -49,7 +49,8 @@ def jugadores():
             id1=datosjugador.get("items")[0].get("id")
             nombre= datosjugador.get("items")[0].get("common_name") 
             return render_template("jugadores.html",id1=id1,ritmo=ritmo,pase=pase,disparo=disparo,fisico=fisico,regate=regate,defensa=defensa,nombre=nombre)
-
+        else:
+            abort(404)
 
 
 @app.route('/precios/', methods=["GET","POST"])
@@ -75,6 +76,8 @@ def precios():
                 ps4=precios.get("playstation").get("price")
                 pc=precios.get("pc").get("price") 
                 return render_template('precios.html',id=id2,xbox=xbox,pc=pc,ps4=ps4,nombre=nombre)
+                else:
+                    abort(404)
 
 
 port=os.environ["PORT"]
