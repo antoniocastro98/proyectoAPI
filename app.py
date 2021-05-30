@@ -76,8 +76,8 @@ def precios():
                 ps4=precios.get("playstation").get("price")
                 pc=precios.get("pc").get("price") 
                 return render_template('precios.html',id=id2,xbox=xbox,pc=pc,ps4=ps4,nombre=nombre)
-                else:
-                    abort(404)
+        else:
+            abort(404)
 
 
 port=os.environ["PORT"]
