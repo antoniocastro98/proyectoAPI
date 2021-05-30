@@ -77,7 +77,5 @@ def precios():
                 return render_template('precios.html',id=id2,xbox=xbox,pc=pc,ps4=ps4,nombre=nombre)
 
 
-
-
 port=os.environ["PORT"]
-app.run('0.0.0.0', int(port), debug=True))
+app.run('0.0.0.0', int(port), debug=True)
