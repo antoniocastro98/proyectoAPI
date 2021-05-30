@@ -61,18 +61,18 @@ def precios():
         datos="{\"name\":\"%s\"}" %jugadores2
         r=requests.post(URL_BASE+"api/players",headers=cabeceras,data=datos)
         if r.status_code==200:
-            jugadores5=r.json()
-            id2=jugadores5.get("items")[0].get("id")
-            nombre=jugadores5.get("items")[0].get("common_name")
+            jugadores=r.json()
+            id2=jugadores.get("items")[0].get("id")
+            nombre=jugadores.get("items")[0].get("common_name")
             id3=str(id2)
             print(id3)
             print(type(id3))
-            r2=requests.post(URL_BASE+"/api/players/"+id3+"/price",headers=cabeceras) 
+            r2=requests.post(URL_BASE+"api/players/"+id3+"/price",headers=cabeceras)
             if r2.status_code==200:
                 precios=r2.json()
-                xbox=precios.get("xbox")[0].get("price") 
-                ps4=precios.get("playstation")[0].get("price")
-                pc=precios.get("pc")[0].get("price") 
+                xbox=precios.get("xbox").get("price") 
+                ps4=precios.get("playstation").get("price")
+                pc=precios.get("pc").get("price") 
                 return render_template('precios.html',id=id2,xbox=xbox,pc=pc,ps4=ps4,nombre=nombre)
 
 
